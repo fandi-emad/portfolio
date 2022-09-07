@@ -621,7 +621,6 @@
                     type="text"
                     name="Name"
                     placeholder="Your Name"
-                    id="name"
                   />
                 </div>
                 <div class="col-6 mt-3 wow fadeInUp">
@@ -630,7 +629,7 @@
                     type="email"
                     name="Email"
                     placeholder="Your Email Address"
-                    id="email"
+                   
                   />
                 </div>
                 <div class="col-6 mt-3 wow fadeInUp">
@@ -639,7 +638,6 @@
                     type="text"
                     name="Subject"
                     placeholder="Subject"
-                    id="sub"
                   />
                 </div>
                 <div class="col-12 mt-3 wow fadeInUp">
@@ -648,7 +646,6 @@
                     name="Message"
                     rows="6"
                     placeholder="Enter message here.."
-                    id="ms"
                   ></textarea>
                   <div class="pt-1" id="greetings"></div>
                 </div>
@@ -672,8 +669,7 @@
       var sub = document.forms["mess"]["Subject"].value; 
       var message = document.forms["mess"]["Message"].value;
       const header = document.getElementById("greetings"); 
-      
-        if ( name== null || name== "" || emal== null || email== "" || sub== null || sub== "" || message== null || message== "") {    
+        if ( name== null || name== "" || email== null || email== "" || sub== null || sub== "" || message== null || message== "") {    
            header.innerHTML = '<h6 class="text-danger">Your message cannot be sent !!!</h6>';
            return false;  
           }
