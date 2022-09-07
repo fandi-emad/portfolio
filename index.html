@@ -8,7 +8,7 @@
 
     <meta name="copyright" content="MACode ID, https://www.macodeid.com/" />
 
-    <title>Fndi Emad-Portfolio</title>
+    <title>Fandi Emad-Portfolio</title>
     <title> Software engineer specializing in designing and developing websites, in addition to designing software projects plans, starting from collecting problems and finding appropriate solutions to testing and delivering the project.</title>
 
     <link
@@ -613,7 +613,7 @@
             </div>
           </div>
           <div class="col-lg-5" >
-            <form class="vg-contact-form" method="post" action="mailto:fandiemad741@gmail.com" onsubmit="return checkingUserName()" name="mess">
+            <form class="vg-contact-form" method="post"  onsubmit="return checkingUserName()" name="mess">
               <div class="form-row">
                 <div class="col-12 mt-3 wow fadeInUp">
                   <input
@@ -621,14 +621,16 @@
                     type="text"
                     name="Name"
                     placeholder="Your Name"
+                    id="name"
                   />
                 </div>
                 <div class="col-6 mt-3 wow fadeInUp">
                   <input
                     class="form-control"
-                    type="tel"
-                    name="Tel"
-                    placeholder="Mobile Number"
+                    type="email"
+                    name="Email"
+                    placeholder="Your Email Address"
+                    id="email"
                   />
                 </div>
                 <div class="col-6 mt-3 wow fadeInUp">
@@ -637,6 +639,7 @@
                     type="text"
                     name="Subject"
                     placeholder="Subject"
+                    id="sub"
                   />
                 </div>
                 <div class="col-12 mt-3 wow fadeInUp">
@@ -645,6 +648,7 @@
                     name="Message"
                     rows="6"
                     placeholder="Enter message here.."
+                    id="ms"
                   ></textarea>
                   <div class="pt-1" id="greetings"></div>
                 </div>
@@ -660,20 +664,35 @@
         </div>
       </div>
     </div>
-    <script>    function checkingUserName() {    
+    <script> 
+    
+       function checkingUserName() {    
       var name = document.forms["mess"]["Name"].value; 
-      var tel = document.forms["mess"]["Tel"].value; 
+      var email = document.forms["mess"]["Email"].value; 
       var sub = document.forms["mess"]["Subject"].value; 
       var message = document.forms["mess"]["Message"].value;
-      const header = document.getElementById("greetings");     
-        if ( name== null || name== "" || tel== null || tel== "" || sub== null || sub== "" || message== null || message== "") {    
+      const header = document.getElementById("greetings"); 
+      
+      var n = document.getElementById("name").value;
+    var em = document.getElementById("email").value;
+    var s = document.getElementById("sub").value;
+    var ms = document.getElementById("ms").value;
+   var url = "https://wa.me/963956260095?text=" 
+   + "*Name*: " + name + "%0a"
+   + "*Email*: " + email + "%0a"
+   + "*Subject*: " + sub  + "%0a"
+   + "*Message*: " + message; 
+
+        if ( name== null || name== "" || emal== null || email== "" || sub== null || sub== "" || message== null || message== "") {    
            header.innerHTML = '<h6 class="text-danger">Your message cannot be sent !!!</h6>';
            return false;  
           }
                    else{
                     header.innerHTML = '<h6 class="text-success">You can send message successfully ...</h6>';
+                     window.open(url, '_blank').focus();
+}
                    }
-                      } </script>
+                       </script>
  
     <!-- End Contact -->
 <hr color="red">
